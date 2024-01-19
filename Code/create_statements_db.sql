@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS patients_bc (
                            ADDRESS    STRING,
                            CITY       STRING,
                            STATE      STRING,
-                           COUNTRY    STRING,
+                           COUNTY    STRING,
                            ZIP        STRING,
                            LAT        INTEGER,
                            LON        INTEGER,
