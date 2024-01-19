@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS patients (
+CREATE TABLE IF NOT EXISTS patients_bc (
                            Id         STRING PRIMARY KEY,
                            BIRTHDATE  DATE,
                            DEATHDATE  DATE,
@@ -27,22 +27,8 @@ CREATE TABLE IF NOT EXISTS patients (
                            HEALTHCARE_COVERAGE INTEGER
   );
                        
-CREATE TABLE IF NOT EXISTS conditions (
-                           condition_code INTEGER PRIMARY KEY AUTOINCREMENT,
-                           START DATE,
-                           STOP DATE,
-                           PATIENT STRING,
-                           ENCOUNTER STRING,
-                           CODE STRING,
-                           DESCRIPTION STRING,
-                           FOREIGN KEY (PATIENT)
-                              REFERENCES patients (Id) 
-                           FOREIGN KEY (Encounter)
-                              REFERENCES encounters (Id) 
- );
 
-
-CREATE TABLE IF NOT EXISTS observations (
+CREATE TABLE IF NOT EXISTS observations_bc (
                            observation_code INTEGER PRIMARY KEY AUTOINCREMENT,
                            DATE DATE,
                            PATIENT STRING,
@@ -58,23 +44,8 @@ CREATE TABLE IF NOT EXISTS observations (
                               REFERENCES encounters (Id) 
 );
 
-CREATE TABLE IF NOT EXISTS careplans (
-                           Id STRING PRIMARY KEY,
-                           START DATE,
-                           STOP DATE,
-                           PATIENT STRING,
-                           ENCOUNTER STRING,
-                           CODE STRING,
-                           DESCRIPTION STRING,
-                           REASONCODE STRING,
-                           REASONDESCRIPTION STRING,
-                           FOREIGN KEY (PATIENT)
-                              REFERENCES patients (Id) 
-                           FOREIGN KEY (Encounter)
-                              REFERENCES encounters (Id) 
-                       );
 
-CREATE TABLE IF NOT EXISTS medications (
+CREATE TABLE IF NOT EXISTS medications_bc (
                            START DATE,
                            STOP DATE,
                            PATIENT STRING,
@@ -92,7 +63,7 @@ CREATE TABLE IF NOT EXISTS medications (
                               REFERENCES patients (Id) 
   );
 
-CREATE TABLE IF NOT EXISTS procedures (
+CREATE TABLE IF NOT EXISTS procedures_bc (
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -107,7 +78,7 @@ CREATE TABLE IF NOT EXISTS procedures (
                               REFERENCES encounters (Id) 
                        );
  
-CREATE TABLE IF NOT EXISTS immunizations(
+CREATE TABLE IF NOT EXISTS immunizations_bc (
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -120,7 +91,7 @@ CREATE TABLE IF NOT EXISTS immunizations(
                               REFERENCES encounters (Id) 
   );
 
-CREATE TABLE IF NOT EXISTS encounters (
+CREATE TABLE IF NOT EXISTS encounters_bc (
                            Id STRING PRIMARY KEY,
                            START DATE,
                            STOP DATE,
