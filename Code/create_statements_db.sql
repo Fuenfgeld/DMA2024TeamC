@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS encounters_bc (
                            START DATE,
                            STOP DATE,
                            PATIENT STRING,
-                           ORGANIZATIONS STRING,
+                           ORGANIZATION STRING,
                            PROVIDER STRING,
                            PAYER STRING,
                            ENCOUNTERCLASS STRING,
