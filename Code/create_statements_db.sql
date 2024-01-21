@@ -130,7 +130,6 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           patient_HEALTHCARE_EXPENSES INTEGER,
                           patient_HEALTHCARE_COVERAGE INTEGER,
                           observations_VALUE STRING,
-                          observations_CODE STRING,
                           procedures_BASE_COST INTEGER,
                           medications_TOTALCOST INTEGER,
                           immunizations_BASE_COST INTEGER,
