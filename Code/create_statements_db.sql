@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS patients (
                            LAT        INTEGER,
                            LON        INTEGER,
                            HEALTHCARE_EXPENSES INTEGER,
-                           HEALTHCARE_COVERAGE INTEGER
+                           HEALTHCARE_COVERAGE INTEGER,
+                           TABLE NAMES STRING
   );
                        
 
@@ -38,6 +39,7 @@ CREATE TABLE IF NOT EXISTS observations (
                            VALUE STRING,
                            UNITS STRING,
                            TYPE STRING,
+                           TABLE NAMES STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
                            FOREIGN KEY (Encounter)
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS medications (
                            TOTALCOST INTEGER,
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
+                           TABLE NAMES STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
   );
@@ -72,6 +75,7 @@ CREATE TABLE IF NOT EXISTS procedures (
                            BASE_COST INTEGER,
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
+                           TABLE NAMES STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
                            FOREIGN KEY (Encounter)
@@ -85,6 +89,7 @@ CREATE TABLE IF NOT EXISTS immunizations (
                            CODE STRING,
                            DESCRIPTION STRING,
                            BASE_COST INTEGER,
+                           TABLE NAMES STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
                            FOREIGN KEY (Encounter)
@@ -107,12 +112,13 @@ CREATE TABLE IF NOT EXISTS encounters (
                            PAYER_COVERAGE INTEGER,
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
+                           TABLE NAMES STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
 );
 
 CREATE TABLE IF NOT EXISTS facts_table (
-                          krebsart  STRING,
+                          cancer_type STRING,
                           patient_ID STRING,
                           observation_code INT,
                           procedure_code INT,
