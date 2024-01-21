@@ -111,7 +111,35 @@ CREATE TABLE IF NOT EXISTS encounters (
                               REFERENCES patients (Id) 
 );
 
-
-
-
+CREATE TABLE IF NOT EXISTS facts_table (
+                          krebsart  STRING,
+                          patient_ID STRING,
+                          observation_code INT,
+                          procedure_code INT,
+                          medication_code INT,
+                          immunization_code INT,
+                          encounter_ID STRING,
+                          patient_LAT        INTEGER,
+                          patient_LON        INTEGER,
+                          patient_HEALTHCARE_EXPENSES INTEGER,
+                          patient_HEALTHCARE_COVERAGE INTEGER,
+                          observations_VALUE STRING,
+                          observations_CODE STRING,
+                          procedures_BASE_COST INTEGER,
+                          medications_TOTALCOST INTEGER,
+                          immunizations_BASE_COST INTEGER,
+                          encounter_BASE_ENCOUNTER_COST INTEGER,
+                          FOREIGN KEY (patient_ID)
+                            REFERENCES patients (Id) 
+                          FOREIGN KEY (observation_code)
+                            REFERENCES observations (observation_code) 
+                          FOREIGN KEY (procedure_code)
+                            REFERENCES procedures (procedure_code)
+                          FOREIGN KEY (medication_code)
+                            REFERENCES medications (medication_code)
+                          FOREIGN KEY (immunization_code)
+                            REFERENCES immunizations (immunization_code) 
+                          FOREIGN KEY (encounter_ID)
+                            REFERENCES encounters (Id) 
+);
 
