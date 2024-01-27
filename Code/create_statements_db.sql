@@ -138,12 +138,6 @@ CREATE TABLE IF NOT EXISTS facts_table (
                             REFERENCES patients (Id) 
                           FOREIGN KEY (observation_code)
                             REFERENCES observations (observation_code) 
-                          FOREIGN KEY (procedure_code)
-                            REFERENCES procedures (procedure_code)
-                          FOREIGN KEY (medication_code)
-                            REFERENCES medications (medication_code)
-                          FOREIGN KEY (immunization_code)
-                            REFERENCES immunizations (immunization_code) 
                           FOREIGN KEY (encounter_ID)
                             REFERENCES encounters (Id) 
 );
