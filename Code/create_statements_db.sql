@@ -125,9 +125,6 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           cancer_type STRING,
                           patient_ID STRING,
                           observation_code INT,
-                          procedures_CODE STRING,
-                          medications_CODE STRING,
-                          immunizations_CODE STRING,
                           encounter_ID STRING,
                           patient_LAT        DECIMAL(6,2),
                           patient_LON        DECIMAL(6,2),
@@ -146,12 +143,12 @@ CREATE TABLE IF NOT EXISTS facts_table (
                               REFERENCES observations (observation_code) 
                           FOREIGN KEY (encounter_ID) 
                               REFERENCES encounters (Id)
-                          FOREIGN KEY (procedures_CODE) 
-                              REFERENCES procedures (CODE) 
-                          FOREIGN KEY (medications_CODE) 
-                              REFERENCES medications (CODE)
-                          FOREIGN KEY (immunizations_CODE) 
-                              REFERENCES immunizations (CODE) 
+                          FOREIGN KEY (patient_ID) 
+                              REFERENCES procedures (PATIENT) 
+                          FOREIGN KEY (patient_ID) 
+                              REFERENCES medications (PATIENT)
+                          FOREIGN KEY (patient_ID) 
+                              REFERENCES immunizations (PATIENT) 
   
 );
 
