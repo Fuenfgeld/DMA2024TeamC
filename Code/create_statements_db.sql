@@ -27,7 +27,28 @@ CREATE TABLE IF NOT EXISTS patients (
                            HEALTHCARE_COVERAGE DECIMAL(9,2),
                            Table_Names STRING
   );
-                       
+
+CREATE TABLE IF NOT EXISTS encounters (
+                           Id STRING PRIMARY KEY,
+                           START DATE,
+                           STOP DATE,
+                           PATIENT STRING,
+                           ORGANIZATION STRING,
+                           PROVIDER STRING,
+                           PAYER STRING,
+                           ENCOUNTERCLASS STRING,
+                           CODE STRING,
+                           DESCRIPTION STRING,
+                           BASE_ENCOUNTER_COST DECIMAL(9,2),
+                           TOTAL_CLAIM_COST DECIMAL(9,2),
+                           PAYER_COVERAGE DECIMAL(9,2),
+                           REASONCODE STRING,
+                           REASONDESCRIPTION STRING,
+                           Table_Names STRING,
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id) 
+);
+
+
 
 CREATE TABLE IF NOT EXISTS observations (
                            observation_code INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -90,25 +111,6 @@ CREATE TABLE IF NOT EXISTS immunizations (
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
   );
 
-CREATE TABLE IF NOT EXISTS encounters (
-                           Id STRING PRIMARY KEY,
-                           START DATE,
-                           STOP DATE,
-                           PATIENT STRING,
-                           ORGANIZATION STRING,
-                           PROVIDER STRING,
-                           PAYER STRING,
-                           ENCOUNTERCLASS STRING,
-                           CODE STRING,
-                           DESCRIPTION STRING,
-                           BASE_ENCOUNTER_COST DECIMAL(9,2),
-                           TOTAL_CLAIM_COST DECIMAL(9,2),
-                           PAYER_COVERAGE DECIMAL(9,2),
-                           REASONCODE STRING,
-                           REASONDESCRIPTION STRING,
-                           Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id) 
-);
 
 CREATE TABLE IF NOT EXISTS facts_table (
                           cancer_type STRING,
