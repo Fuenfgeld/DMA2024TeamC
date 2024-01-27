@@ -128,6 +128,7 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           patient_LON        DECIMAL(6,2),
                           patient_HEALTHCARE_EXPENSES DECIMAL(6,2),
                           patient_HEALTHCARE_COVERAGE DECIMAL(6,2),
+                          patient_BIRTHDATE DATE, 
                           observations_VALUE STRING,
                           observations_DATE  DATE,
                           procedures_BASE_COST DECIMAL(6,2),
