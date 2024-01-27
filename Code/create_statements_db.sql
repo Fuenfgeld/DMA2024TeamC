@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS encounters (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id) 
+                           FOREIGN KEY (PATIENT) 
+                              REFERENCES patients (Id) 
 );
 
 
@@ -61,8 +62,10 @@ CREATE TABLE IF NOT EXISTS observations (
                            UNITS STRING,
                            TYPE STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
-                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) 
+                              REFERENCES patients (Id)
+                           FOREIGN KEY (Encounter) 
+                              REFERENCES encounters (Id) 
 );
 
 
@@ -81,8 +84,10 @@ CREATE TABLE IF NOT EXISTS medications (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id),
-                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) 
+                              REFERENCES patients (Id)
+                           FOREIGN KEY (Encounter) 
+                              REFERENCES encounters (Id) 
   );
 
 CREATE TABLE IF NOT EXISTS procedures (
@@ -95,8 +100,10 @@ CREATE TABLE IF NOT EXISTS procedures (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
-                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) 
+                              REFERENCES patients (Id) 
+                           FOREIGN KEY (Encounter) 
+                              REFERENCES encounters (Id) 
                        );
  
 CREATE TABLE IF NOT EXISTS immunizations (
@@ -107,8 +114,10 @@ CREATE TABLE IF NOT EXISTS immunizations (
                            DESCRIPTION STRING,
                            BASE_COST DECIMAL(9,2),
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
-                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) 
+                              REFERENCES patients (Id) 
+                           FOREIGN KEY (Encounter) 
+                              REFERENCES encounters (Id) 
   );
 
 
@@ -128,8 +137,11 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           medications_TOTALCOST DECIMAL(6,2),
                           immunizations_BASE_COST DECIMAL(6,2),
                           encounter_BASE_ENCOUNTER_COST DECIMAL(6,2),
-                          FOREIGN KEY (patient_ID) REFERENCES patients (Id), 
-                          FOREIGN KEY (observation_code) REFERENCES observations (observation_code), 
-                          FOREIGN KEY (encounter_ID) REFERENCES encounters (Id) 
+                          FOREIGN KEY (patient_ID) 
+                              REFERENCES patients (Id), 
+                          FOREIGN KEY (observation_code) 
+                              REFERENCES observations (observation_code), 
+                          FOREIGN KEY (encounter_ID) 
+                              REFERENCES encounters (Id) 
 );
 
