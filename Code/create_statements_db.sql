@@ -64,6 +64,8 @@ CREATE TABLE IF NOT EXISTS medications (
                            Table_Names STRING,
                            FOREIGN KEY (PATIENT)
                               REFERENCES patients (Id) 
+                          FOREIGN KEY (Encounter)
+                              REFERENCES encounters (Id) 
   );
 
 CREATE TABLE IF NOT EXISTS procedures (
@@ -121,15 +123,13 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           cancer_type STRING,
                           patient_ID STRING,
                           observation_code INT,
-                          procedure_code INT,
-                          medication_code INT,
-                          immunization_code INT,
                           encounter_ID STRING,
                           patient_LAT        DECIMAL(6,2),
                           patient_LON        DECIMAL(6,2),
                           patient_HEALTHCARE_EXPENSES DECIMAL(6,2),
                           patient_HEALTHCARE_COVERAGE DECIMAL(6,2),
                           observations_VALUE STRING,
+                          observations_DATE  DATE,
                           procedures_BASE_COST DECIMAL(6,2),
                           medications_TOTALCOST DECIMAL(6,2),
                           immunizations_BASE_COST DECIMAL(6,2),
