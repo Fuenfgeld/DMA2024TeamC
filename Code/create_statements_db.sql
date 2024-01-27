@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS encounters (
 
 
 CREATE TABLE IF NOT EXISTS observations (
-                           observation_code INTEGER PRIMARY KEY AUTOINCREMENT,
+                           observation_CODE INTEGER PRIMARY KEY AUTOINCREMENT,
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS observations (
 
 
 CREATE TABLE IF NOT EXISTS medications (
+                           medication_CODE INTEGER PRIMARY KEY AUTOINCREMENT,
                            START DATE,
                            STOP DATE,
                            PATIENT STRING,
@@ -91,6 +92,7 @@ CREATE TABLE IF NOT EXISTS medications (
   );
 
 CREATE TABLE IF NOT EXISTS procedures (
+                           procedure_CODE INTEGER PRIMARY KEY AUTOINCREMENT,                         
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -107,6 +109,7 @@ CREATE TABLE IF NOT EXISTS procedures (
                        );
  
 CREATE TABLE IF NOT EXISTS immunizations (
+                           immunization_CODE INTEGER PRIMARY KEY AUTOINCREMENT,                         
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -143,8 +146,8 @@ CREATE TABLE IF NOT EXISTS fact_table (
     FOREIGN KEY (patient_ID) REFERENCES patients (Id),
     FOREIGN KEY (encounter_ID) REFERENCES encounters (Id),
     FOREIGN KEY (observation_CODE) REFERENCES observations (observation_CODE),
-    FOREIGN KEY (medication_CODE) REFERENCES medications (CODE),
-    FOREIGN KEY (procedure_CODE) REFERENCES procedures (CODE),
-    FOREIGN KEY (immunization_CODE) REFERENCES immunizations (CODE)
+    FOREIGN KEY (medication_CODE) REFERENCES medications (medication_CODE),
+    FOREIGN KEY (procedure_CODE) REFERENCES procedures (procedure_CODE),
+    FOREIGN KEY (immunization_CODE) REFERENCES immunizations (immunization_CODE)
 
 );
