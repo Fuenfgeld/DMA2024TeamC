@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS observations (
                            UNITS STRING,
                            TYPE STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (patient_ID) REFERENCES patients (Id), 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
 );
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS medications (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (patient_ID) REFERENCES patients (Id),
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id),
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
   );
 
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS procedures (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (patient_ID) REFERENCES patients (Id), 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
                        );
  
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS immunizations (
                            DESCRIPTION STRING,
                            BASE_COST DECIMAL(9,2),
                            Table_Names STRING,
-                           FOREIGN KEY (patient_ID) REFERENCES patients (Id), 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id), 
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
   );
 
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS encounters (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (patient_ID) REFERENCES patients (Id) 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id) 
 );
 
 CREATE TABLE IF NOT EXISTS facts_table (
