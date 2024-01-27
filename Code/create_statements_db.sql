@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           FOREIGN KEY (encounter_ID) 
                               REFERENCES observations (ENCOUNTER)
                           FOREIGN KEY (patient_ID) 
-                              REFERENCES encounters (PATIENT))
+                              REFERENCES encounters (PATIENT)
                           FOREIGN KEY (encounter_ID) 
                               REFERENCES encounters (Id)
                           FOREIGN KEY (patient_ID) 
