@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS patients (
                            LON        DECIMAL(6,2),
                            HEALTHCARE_EXPENSES DECIMAL(9,2),
                            HEALTHCARE_COVERAGE DECIMAL(9,2),
-                           Table_Names STRING
+                           cancer_type STRING
   );
 
 CREATE TABLE IF NOT EXISTS encounters (
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS encounters (
                            PAYER_COVERAGE DECIMAL(9,2),
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
-                           Table_Names STRING,
+                           cancer_type STRING,
                            FOREIGN KEY (PATIENT) 
                               REFERENCES patients (Id) 
 );
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS observations (
                            VALUE STRING,
                            UNITS STRING,
                            TYPE STRING,
-                           Table_Names STRING,
+                           cancer_type STRING,
                            FOREIGN KEY (PATIENT) REFERENCES patients (Id),
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
 );
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS medications (
                            TOTALCOST DECIMAL(9,2),
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
-                           Table_Names STRING,
+                           cancer_type STRING,
                            FOREIGN KEY (PATIENT) 
                               REFERENCES patients (Id)
                            FOREIGN KEY (Encounter) 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS procedures (
                            BASE_COST DECIMAL(9,2),
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
-                           Table_Names STRING,
+                           cancer_type STRING,
                            FOREIGN KEY (PATIENT) REFERENCES patients (Id),
                            FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
                        );
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS immunizations (
                            CODE STRING,
                            DESCRIPTION STRING,
                            BASE_COST DECIMAL(9,2),
-                           Table_Names STRING,
+                           cancer_type STRING,
                            FOREIGN KEY (PATIENT) 
                               REFERENCES patients (Id) 
                            FOREIGN KEY (Encounter) 
