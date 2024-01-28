@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS immunizations (
   );
 
 CREATE TABLE IF NOT EXISTS facts_table (
-                          Table_Names STRING,
+                          cancer_type STRING,
                           patient_ID STRING,
                           encounter_ID STRING,
                           patient_LAT        DECIMAL(6,2),
