@@ -87,8 +87,7 @@ CREATE TABLE IF NOT EXISTS medications (
                               REFERENCES encounters (Id) 
   );
 
-CREATE TABLE IF NOT EXISTS procedures (
-                           procedure_CODE INTEGER PRIMARY KEY,                         
+CREATE TABLE IF NOT EXISTS procedures (                       
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
