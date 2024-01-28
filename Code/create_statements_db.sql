@@ -52,7 +52,6 @@ CREATE TABLE IF NOT EXISTS encounters (
 
 
 CREATE TABLE IF NOT EXISTS observations (
-                           observation_CODE INTEGER PRIMARY KEY AUTOINCREMENT,
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -62,15 +61,12 @@ CREATE TABLE IF NOT EXISTS observations (
                            UNITS STRING,
                            TYPE STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) 
-                              REFERENCES patients (Id)
-                           FOREIGN KEY (Encounter) 
-                              REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id),
+                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
 );
 
 
 CREATE TABLE IF NOT EXISTS medications (
-                           medication_CODE INTEGER PRIMARY KEY AUTOINCREMENT,
                            START DATE,
                            STOP DATE,
                            PATIENT STRING,
@@ -92,7 +88,7 @@ CREATE TABLE IF NOT EXISTS medications (
   );
 
 CREATE TABLE IF NOT EXISTS procedures (
-                           procedure_CODE INTEGER PRIMARY KEY AUTOINCREMENT,                         
+                           procedure_CODE INTEGER PRIMARY KEY,                         
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -102,14 +98,11 @@ CREATE TABLE IF NOT EXISTS procedures (
                            REASONCODE STRING,
                            REASONDESCRIPTION STRING,
                            Table_Names STRING,
-                           FOREIGN KEY (PATIENT) 
-                              REFERENCES patients (Id) 
-                           FOREIGN KEY (Encounter) 
-                              REFERENCES encounters (Id) 
+                           FOREIGN KEY (PATIENT) REFERENCES patients (Id),
+                           FOREIGN KEY (Encounter) REFERENCES encounters (Id) 
                        );
  
-CREATE TABLE IF NOT EXISTS immunizations (
-                           immunization_CODE INTEGER PRIMARY KEY AUTOINCREMENT,                         
+CREATE TABLE IF NOT EXISTS immunizations (                 
                            DATE DATE,
                            PATIENT STRING,
                            ENCOUNTER STRING,
@@ -123,31 +116,32 @@ CREATE TABLE IF NOT EXISTS immunizations (
                               REFERENCES encounters (Id) 
   );
 
-
-CREATE TABLE IF NOT EXISTS fact_table (
-    cancer_type STRING,
-    patient_ID STRING,
-    patient_LAT        DECIMAL(6,2),
-    patient_LON        DECIMAL(6,2),
-    patient_HEALTHCARE_EXPENSES DECIMAL(6,2),
-    patient_HEALTHCARE_COVERAGE DECIMAL(6,2),
-    patient_BIRTHDATE DATE,
-    encounter_ID STRING,
-    encounter_BASE_ENCOUNTER_COST DECIMAL(6,2),
-    observation_CODE INTEGER,
-    observation_DATE DATE,
-    observation_VALUE STRING,
-    medication_CODE STRING,
-    procedure_CODE STRING,
-    immunization_CODE STRING,
-    procedures_BASE_COST DECIMAL(6,2),
-    medications_TOTALCOST DECIMAL(6,2),
-    immunizations_BASE_COST DECIMAL(6,2),
-    FOREIGN KEY (patient_ID) REFERENCES patients (Id),
-    FOREIGN KEY (encounter_ID) REFERENCES encounters (Id),
-    FOREIGN KEY (observation_CODE) REFERENCES observations (observation_CODE),
-    FOREIGN KEY (medication_CODE) REFERENCES medications (medication_CODE),
-    FOREIGN KEY (procedure_CODE) REFERENCES procedures (procedure_CODE),
-    FOREIGN KEY (immunization_CODE) REFERENCES immunizations (immunization_CODE)
+CREATE TABLE IF NOT EXISTS facts_table (
+                          cancer_type STRING,
+                          patient_ID STRING,
+                          observation_code INT,
+                          encounter_ID STRING,
+                          patient_LAT        DECIMAL(6,2),
+                          patient_LON        DECIMAL(6,2),
+                          patient_HEALTHCARE_EXPENSES DECIMAL(6,2),
+                          patient_HEALTHCARE_COVERAGE DECIMAL(6,2),
+                          patient_BIRTHDATE DATE,
+                          observations_VALUE STRING,
+                          observations_DATE  DATE,
+                          procedures_BASE_COST DECIMAL(6,2),
+                          medications_TOTALCOST DECIMAL(6,2),
+                          immunizations_BASE_COST DECIMAL(6,2),
+                          encounter_BASE_ENCOUNTER_COST DECIMAL(6,2),
+                          FOREIGN KEY (patient_ID) REFERENCES patients (Id),
+                          FOREIGN KEY (patient_ID) REFERENCES observations (PATIENT),
+                          FOREIGN KEY (encounter_ID) REFERENCES observations (ENCOUNTER),
+                          FOREIGN KEY (patient_ID) REFERENCES encounters (PATIENT),
+                          FOREIGN KEY (encounter_ID) REFERENCES encounters (Id),
+                          FOREIGN KEY (patient_ID) REFERENCES procedures (PATIENT),
+                          FOREIGN KEY (encounter_ID) REFERENCES procedures (ENCOUNTER),
+                          FOREIGN KEY (patient_ID) REFERENCES medications (PATIENT),
+                          FOREIGN KEY (encounter_ID) REFERENCES medications (ENCOUNTER),
+                          FOREIGN KEY (patient_ID) REFERENCES immunizations (PATIENT),
+                          FOREIGN KEY (encounter_ID) REFERENCES immunizations (ENCOUNTER)
 
 );
