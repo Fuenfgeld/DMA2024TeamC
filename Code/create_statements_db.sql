@@ -127,6 +127,7 @@ CREATE TABLE IF NOT EXISTS facts_table (
                           observations_CODE STRING,
                           observations_VALUE STRING,
                           observations_DATE  DATE,
+                          observations_AGE DECIMAL(6,2),
                           procedures_BASE_COST DECIMAL(11,2),
                           medications_TOTALCOST DECIMAL(11,2),
                           immunizations_BASE_COST DECIMAL(11,2),
