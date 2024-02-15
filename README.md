@@ -1,6 +1,3 @@
-# DMA2024TeamC
-
-# CALICO-MA: CAncer LIfe COst Study for Massachusetts
 
 # Projekt CALICO-MA: CAncer LIfe COst Study for Massachusetts 
 | Gruppe DMA2024TeamC
