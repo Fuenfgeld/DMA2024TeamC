@@ -4,7 +4,7 @@
 
 ![Screenshot 2024-02-12 at 17 03 49](https://github.com/Fuenfgeld/DMA2024TeamC/assets/39849786/6847bb26-1fb9-495a-8c9d-834da9eed2c4)
 
-# [Dashboard](https://public.tableau.com/views/CALICO_Massachusetts/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link)
+[Dashboard](https://public.tableau.com/views/CALICO_Massachusetts/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link)
 
 **CALICO-MA** ist ein Data Management Projekt zu Studienzwecken im Rahmen des [Berufsbegleitenden Online-Master „Biomedizinische Informatik und Data Science“ der Hochschule Mannheim](https://www.master-bids.hs-mannheim.de/). _Es untersucht die Unterschiede bei den Kosten, der geografischen Lage und der Lebensqualität zwischen Brust-, Darm- und Lungenkrebs_ anhand von synthetischen Patientendaten (Synthea). [Synthea TM](https://synthetichealth.github.io/synthea/)([Walonoski et al. 2017](https://doi.org/10.1093/jamia/ocx079)).
 
