@@ -11,7 +11,7 @@
 
 Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick ist dem WIKI-Abschnitt [Projekt Backlog](https://github.com/users/Fuenfgeld/projects/9/views/1) zu entnehmen.
 
-📊 Die entstandenen Ergebnisse werden unter [Ergebnisse](https://github.com/Fuenfgeld/DMA2024TeamC/wiki/6.-Ergebnisse) dargestellt und hier [Dashboard der Forschungsergebnisse (https://public.tableau.com/views/CALICO_Massachusetts/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link)
+📊 Die entstandenen Ergebnisse werden unter [Ergebnisse](https://github.com/Fuenfgeld/DMA2024TeamC/wiki/6.-Ergebnisse)und [Dashboard der Forschungsergebnisse] (https://public.tableau.com/views/CALICO_Massachusetts/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link) dargestellt
 
 ## Überblick der Projektschritte und des Datenflusses
 
