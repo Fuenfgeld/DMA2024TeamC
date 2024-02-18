@@ -33,3 +33,8 @@ Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick
 🚀 [Code zum ML ] In progress
 
 ## Hinweis zur Reproduzierbarkeit
+Die Rohdaten können über die Module Breast-Cancer, Lung-Cancer und Colorectal-Cancer von [Synthea TM](https://synthetichealth.github.io/synthea/) bezogen werden. Die betreffenden Daten können im Rahmen unserer [Datendokumentation](https://github.com/Fuenfgeld/DMA2024TeamC/tree/main/Data/Quelldaten/CSV_Data) eingesehen werden. 
+
+Für die statistische Analyse und das Machine Learning Modell benötigte Daten wurden im Zuge des Einlesen der Datenbank aggregiert und sind anhand des [Codes](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung_HS_GS.ipynb) einsehbar.
+
+
