@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "datamanegment"
+version = "0.1.0"
+description = ""
+authors = ["schmidgu <schmidt_gunnar@freenet.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+pandas = "^2.2.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.8.2"
+seaborn = "^0.13.2"
+scikit-learn = "^1.4.0"
+folium = "^0.15.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
