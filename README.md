@@ -25,11 +25,11 @@ Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick
 
 ## Codeentwicklung
 
-💾 [Code zur Herstellung der Rohdatenbank](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse_GS.ipynb)
+💾 [Code zur Herstellung der Rohdatenbank](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb)
 
-🔄 [Code zum ETL-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse_GS.ipynb)
+🔄 [Code zum ETL-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb)
 
-🔢 [Code zum EDA-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung_HS.ipynb)
+🔢 [Code zum EDA-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung.ipynb)
 
 🚀 [Code zum ML ] In progress
 
