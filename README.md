@@ -16,7 +16,7 @@ Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick
 
 ## Überblick der Projektschritte und des Datenflusses
 
-[Projektschritte](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Documentation/Projektdiagramm_CALICO_MA.png)
+![Projektdiagramm](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Documentation/Projektdiagramm_CALICO_MA.png)
 
 
 
