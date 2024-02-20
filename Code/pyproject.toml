@@ -2,7 +2,7 @@
 name = "datamanegment"
 version = "0.1.0"
 description = ""
-authors = ["schmidgu <schmidt_gunnar@freenet.de>"]
+authors = ["schmidgu"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
