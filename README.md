@@ -2,7 +2,8 @@
 # Projekt CALICO-MA: CAncer LIfe COst Study for Massachusetts 
 | Gruppe DMA2024TeamC
 
-![Dashboard](https://github.com/Fuenfgeld/DMA2024TeamC/assets/39849786/6a360ebd-2158-46b1-9828-93b3e5fd1dc2)
+![Dashboard](https://github.com/Fuenfgeld/DMA2024TeamC/assets/39849786/34dece6f-6e3a-46c2-a3d6-4bb1cefe5bed)
+
 
 
 [Dashboard der Forschungsergebnisse](https://public.tableau.com/views/CALICO_Massachusetts/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link) 
