@@ -29,9 +29,7 @@ Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick
 
 🔄 [Code zum ETL-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb)
 
-🔢 [Code zum EDA-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung.ipynb)
-
-🚀 [Code zum ML ] In progress
+🔢 + 🚀 [Code zum EDA-Prozess und Machine Learning](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung.ipynb)
 
 ## Hinweis zur Reproduzierbarkeit
 Die Rohdaten können über die Module Breast-Cancer, Lung-Cancer und Colorectal-Cancer von [Synthea TM](https://synthetichealth.github.io/synthea/) bezogen werden. Die betreffenden Daten können im Rahmen unserer [Datendokumentation](https://github.com/Fuenfgeld/DMA2024TeamC/tree/main/Data/Quelldaten/CSV_Data) eingesehen werden. 
