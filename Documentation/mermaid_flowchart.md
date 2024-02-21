@@ -2,12 +2,12 @@
 
 flowchart LR
 
-classDef patients fill:#1d2591;
-classDef encounters fill:#0a4042;
+classDef patients fill:#a6b1ed;
+classDef encounters fill:#a6ebed;
 classDef observations fill:#e06377;
 classDef procedures fill:#c83349;
-classDef medications fill:#5b3758;
-classDef immunizations fill:#350d36;
+classDef medications fill:#dc95e6;
+classDef immunizations fill:#e3e85f;
 
 subgraph "Patients CSV Files"
     breast_patients["Patients.csv from Breast Cancer Dataset"]
@@ -51,14 +51,19 @@ class lung_observations observations
 class colorectal_observations observations
 class merged_observations observations
 
+database["Datawarehouse.db with facts_table"]
+merged_patients-->database
+merged_encounters-->database
+merged_observations-->database
+
 subgraph "Procedures CSV Files"
     breast_procedures["Procedures.csv from Breast Cancer Dataset"]
     lung_procedures["Procedures.csv from Lung Cancer Dataset"]
     colorectal_procedures["Procedures.csv from Colorectal Cancer Dataset"]
     merged_procedures["Merged procedures.csv"]
-    breast_procedures-->merged_procedures
-    lung_procedures-->merged_procedures
-    colorectal_procedures-->merged_procedures
+    merged_procedures-->breast_procedures
+    merged_procedures-->lung_procedures
+    merged_procedures-->colorectal_procedures
 end
 class breast_procedures procedures
 class lung_procedures procedures
@@ -70,9 +75,9 @@ subgraph "Medications CSV Files"
     lung_medications["Medications.csv from Lung Cancer Dataset"]
     colorectal_medications["Medications.csv from Colorectal Cancer Dataset"]
     merged_medications["Merged medications.csv"]
-    breast_medications-->merged_medications
-    lung_medications-->merged_medications
-    colorectal_medications-->merged_medications
+    merged_medications-->breast_medications
+    merged_medications-->lung_medications
+    merged_medications-->colorectal_medications
 end
 class breast_medications medications
 class lung_medications medications
@@ -84,21 +89,17 @@ subgraph "Immunizations CSV Files"
     lung_immunizations["Immunizations.csv from Lung Cancer Dataset"]
     colorectal_immunizations["Immunizations.csv from Colorectal Cancer Dataset"]
     merged_immunizations["Merged immunizations.csv"]
-    breast_immunizations-->merged_immunizations
-    lung_immunizations-->merged_immunizations
-    colorectal_immunizations-->merged_immunizations
+    merged_immunizations-->breast_immunizations
+    merged_immunizations-->lung_immunizations
+    merged_immunizations-->colorectal_immunizations
 end
 class breast_immunizations immunizations
 class lung_immunizations immunizations
 class colorectal_immunizations immunizations
 class merged_immunizations immunizations
 
-database["Datawarehouse.db with facts_table"]
-merged_patients-->database
-merged_encounters-->database
-merged_observations-->database
-merged_procedures-->database
-merged_medications-->database
-merged_immunizations-->database
+database-->merged_procedures
+database-->merged_medications
+database-->merged_immunizations
 
 ```
