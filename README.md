@@ -25,11 +25,16 @@ Das Projekt entstand über mehrere Entwicklungsschritte: Ein vertiefter Einblick
 
 ## Codeentwicklung
 
-💾 [Code zur Herstellung der Rohdatenbank](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb)
+In dem Order [Code](https://github.com/Fuenfgeld/DMA2024TeamC/tree/main/Code) sind die beiden Jupyter Notebook Scripte [ETL2Datawarehouse.ipynb](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb) für den [ETL-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/wiki/4.-ETL-Prozess) und [DWH_GeoVisualisierung.ipynb](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung.ipynb) für die [Explorative Datenanalyse](https://github.com/Fuenfgeld/DMA2024TeamC/wiki/5.-Explorative-Datenanalyse) abgelegt.
 
-🔄 [Code zum ETL-Prozess](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/ETL2Datawarehouse.ipynb)
+In diesen beiden Jupyter Notebooks sind jeweils die links zu Google Colab zu finden um diese in der dortigen Umgebung auszuführen. Die benötigten Bibliotheken werden am Anfang der Scripte geladen. Zudem wird eine Verbindung zum persönlichen Google Drive hergestellt und in diesem das Repository geclont um die benötigten CSV-Daten zur erhalten. 
 
-🔢 + 🚀 [Code zum EDA-Prozess und Machine Learning](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/DWH_GeoVisualisierung.ipynb)
+Für das Ausführen der Scripte außerhalb von Google Colab (z.B. wie in diesem Projekt das lokal genutzte MS Visual Studio Code mit Windows Subsystem für Linux, Ubuntu 22.04.3 LTS) wurde für die Python-Verwaltung [Poetry](https://python-poetry.org/) verwendet. Die hierfür nötigen Konfigurationsdateien [poetry.lock](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/poetry.lock) und [pyproject.toml](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/pyproject.toml) sind unter [Code](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Code/) zu finden.
+
+Für den Low-Code-Pfad wurde eine Testversion von [Tableau Prep Builder Version 2023.1.3 (23.13.23.0614.0602)](https://www.tableau.com/support/releases/prep/2023.1.3) verwendet, um die vereinigten Tabellen mit den drei Krebsarten und die Eingabedatei [Fact_table.csv](https://github.com/Fuenfgeld/DMA2024TeamC/tree/main/Data/Tableau) zu generieren, die für die Erstellung des [Ergebnis-Dashboards](https://public.tableau.com/app/profile/monica.espitia/viz/CALICO_Massachusetts/Dashboard1) verwendet werden kann (erstellt mit der kostenlosen Plattform [Tableau Public](https://www.tableau.com/de-de/products/public)).
+
+Die detaillierte Dokumentation der mit Tableau durchgeführten Datenaufbereitung und -transformation finden Sie unter dem Kapitel [4.1 ETL Low Code (Tableau)](https://github.com/Fuenfgeld/DMA2024TeamC/wiki/4.1-ETL-Low-Code-(Tableau)) in unserem Projekt-Repository hier in Github. [geocodio](https://www.geocod.io/) wurde verwendet, um die fehlenden Daten der Postleitzahlen zu ergänzen (46 % der Patienten hatten keine Postleitzahl in der Patiententabelle), die für die Erstellung des Ergebnis-Dashboards in Tableau Public benötigt wurden. Die Tabelle mit den vollständigen Informationen zu den Postleitzahlen finden Sie hier [facts_table_complete_ZIP.csv](https://github.com/Fuenfgeld/DMA2024TeamC/blob/main/Data/Tableau/facts_table_complete_ZIP.csv). 
+
 
 ## Hinweis zur Reproduzierbarkeit
 Die Rohdaten können über die Module Breast-Cancer, Lung-Cancer und Colorectal-Cancer von [Synthea TM](https://synthetichealth.github.io/synthea/) bezogen werden. Die betreffenden Daten können im Rahmen unserer [Datendokumentation](https://github.com/Fuenfgeld/DMA2024TeamC/tree/main/Data/Quelldaten/CSV_Data) eingesehen werden. 
